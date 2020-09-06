@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+/*layout*/
+::-webkit-scrollbar:vertical {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App, .ant-layout, main.ant-layout-content.site-layout-background {
+  background-color: #f3f4f7;
+  background: #f3f4f7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.ant-typography, .ant-typography p {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#brandLogo {
+  width: 200px;
+  background: black;
+  background: blue;
+  height: 100%;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#MyAccountMenu {
+  transform: translate(0, calc(-100% + 1px));
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*utils*/
+.flex-row {
+  flex-flow: row;
+}
+.flex-col {
+  flex-flow: column;
+}
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-unset {
+  display: flex;
+  justify-content: center;
+}
+.flex-unset-center {
+  display: flex;
+  align-items: center;
+}
+.flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-between-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+
+.period-col {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
 }

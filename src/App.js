@@ -1,24 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+
+import AppLayout from './Layout'
 import './App.css';
+
+import Placements from './pages/Placements'
+import Placement from './pages/Placement'
+import InfluencerList from './pages/InfluencerList'
+import Influencers from './pages/Influencers'
+import Influencer from './pages/Influencer'
+import ShopList from './pages/ShopList'
+import Shops from './pages/Shops'
+import Shop from './pages/Shop'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <AppLayout>
+          <Switch>
+            <Route exact path="/placements" component={Placements} />
+            <Route exact path="/placement" component={Placement} />
+            <Route exact path="/influencerList" component={InfluencerList} />
+            <Route exact path="/influencers" component={Influencers} />
+            <Route exact path="/influencer" component={Influencer} />
+            <Route exact path="/shopList" component={ShopList} />
+            <Route exact path="/shops" component={Shops} />
+            <Route exact path="/shop" component={Shops} />
+          </Switch>
+        </AppLayout>
+      </Router>
     </div>
   );
 }
