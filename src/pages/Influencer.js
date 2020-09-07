@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Avatar, Card, Typography, Row, Col, Button, Table, Space } from 'antd';
-import { MailOutlined, InstagramOutlined, QuestionOutlined, LinkOutlined, CalendarOutlined } from '@ant-design/icons';
+import { QuestionOutlined, LinkOutlined, CalendarOutlined } from '@ant-design/icons';
 
 import InfluencerHead from '../components/InfluencerHead'
 const { Title, Text, Paragraph } = Typography;
@@ -35,14 +35,14 @@ const PlacementTable = () => {
             <LinkOutlined />
           </Space>
         )} />
-      <Column title="date" dataIndex="date" key="date" />
+      <Column title="DATE" dataIndex="date" key="date" />
       <Column
         title=""
         key="action"
         render={(text, record) => (
           <Space size="middle">
-            <Button>See stories</Button>
-            <Button>Détails du placement</Button>
+            <Button type="primary">See stories</Button>
+            <Button type="primary">Détails du placement</Button>
           </Space>
         )}
       />

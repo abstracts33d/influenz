@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/influencer" component={Influencer} />
             <Route exact path="/shopList" component={ShopList} />
             <Route exact path="/shops" component={Shops} />
-            <Route exact path="/shop" component={Shops} />
+            <Route exact path="/shop" component={Shop} />
           </Switch>
         </AppLayout>
       </Router>
