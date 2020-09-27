@@ -5,7 +5,7 @@ import { Card, Typography, Input } from 'antd';
 
 import InfluencerTable from '../components/InfluencerTable'
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const { Search } = Input;
 
 const influencerTableData = [

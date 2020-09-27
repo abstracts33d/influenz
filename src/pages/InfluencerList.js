@@ -1,12 +1,21 @@
 import React from 'react';
 
-import { Card, Typography, Row, Col, Button } from 'antd';
-import { EditOutlined, SettingOutlined } from '@ant-design/icons';
+import { Space, Typography, Row, Col, Button, Dropdown } from 'antd';
+
+import {DownOutlined} from '@ant-design/icons';
+
+import SubNav from "../components/SubNav.js"
+import ListSider from "../components/lists/ListSider";
 
 import InfluencerTable from '../components/InfluencerTable'
 
-const { Title, Text } = Typography;
 
+import Countries from "../components/menus/Countries.js"
+import Categories from "../components/menus/Categories.js"
+import Placements from "../components/menus/Placements"
+import Subscribers from "../components/menus/Subscribers"
+
+const { Title, Text } = Typography;
 const influencerTableData = [
   {
     key: 1,
@@ -29,19 +38,40 @@ const influencerTableData = [
 function InfluencerList() {
   return (
     <div id="InfluencerList">
-      <Row style={{ alignItems: "baseline" }}>
-        <Title level={1} >Test <EditOutlined /></Title>
-      </Row>
+      <SubNav title="Influencers">
+          <div className="flex-end-center">
+                    <Space size="middle">
+                        <Text>
+                            Filter by
+                        </Text>
+                      <Dropdown overlay={Subscribers} trigger={['click']}>
+                        <Button className="ant-dropdown-link">
+                          Subscriber<DownOutlined/>
+                        </Button>
+                      </Dropdown>
+                      <Dropdown overlay={Placements} trigger={['click']}>
+                        <Button className="ant-dropdown-link">
+                          Placement<DownOutlined/>
+                        </Button>
+                      </Dropdown>
+                        <Dropdown overlay={Countries} trigger={['click']}>
+                            <Button className="ant-dropdown-link">
+                                Country<DownOutlined/>
+                            </Button>
+                        </Dropdown>
+                        <Dropdown overlay={Categories} trigger={['click']}>
+                            <Button className="ant-dropdown-link">
+                                Categoty<DownOutlined/>
+                            </Button>
+                        </Dropdown>
+                    </Space>
+                </div>
+        </SubNav>
       <Row>
-        <Col span={18}>
-          <Card >
+        <Col span={16} push={1}>
             {influencerTableData.length && (
               <React.Fragment>
-                <div className="flex-between-center">
-                  <Title level={2} >Influencers :{influencerTableData.length}</Title>
-                  <Text>Settings <SettingOutlined /></Text>
-                </div>
-                <div style={{ overflowX: "scroll" }}>
+                <div>
                   <InfluencerTable influencerTableData={influencerTableData} />
                 </div>
               </React.Fragment>
@@ -51,17 +81,12 @@ function InfluencerList() {
                   <Text>Gather influencers for a campaign, calculate the total number of followers and placements.</Text>
                 </React.Fragment>
               )}
-          </Card>
         </Col>
-        <Col span={5} push={1}>
-          <Card >
-            <Button type="primary">Create List</Button>
-            <div>
-              <Text>Test: {influencerTableData.length}</Text>
-            </div>
-          </Card>
+        <Col span={5} push={2}>
+          <ListSider name="influencer"/>
         </Col>
       </Row>
+
     </div>
   )
 }

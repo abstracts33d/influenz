@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-import { Avatar, Layout, Menu, Dropdown, Typography } from 'antd';
-import { DownOutlined, UserOutlined, ShopOutlined, NotificationOutlined } from '@ant-design/icons';
+import {Avatar, Layout, Menu, Dropdown, Typography, Button, Space} from 'antd';
+import {DownOutlined, UserOutlined, ShopOutlined, NotificationOutlined} from '@ant-design/icons';
 
-const { SubMenu } = Menu;
-const { Title } = Typography;
-const { Header, Content, Sider } = Layout;
+import LogoIcon from "./Logo.js";
+import ArrowIcon from "./Arrow.js";
+
+import Notification from "./assets/notification.svg";
+
+const {Text} = Typography
+const {Header, Content, Sider} = Layout;
 
 const myAccountMenu = (
   <Menu>
@@ -30,93 +34,135 @@ const myAccountMenu = (
   </Menu>
 );
 
+
+const Arrow = (
+  <Button style={{
+    borderRadius: '50%!important',
+    width: '3rem',
+    height: '3rem',
+    padding: '0',
+    float: 'right'
+  }} className="menu-arrow transformed">
+    <ArrowIcon size={18} fill="white"/>
+  </Button>
+)
+
 function AppLayout(props) {
-  const { children } = props
+  const {children} = props
 
   return (
-
-    <Layout>
-      <Header className="header" style={{ position: 'fixed', zIndex: 1, width: '100%', background: 'white', paddingLeft: 0 }}>
-        <div id="brandLogo">INFLUENZ</div>
-        <Menu mode="horizontal" style={{ float: 'right' }} id="MyAccountMenu">
-          <Dropdown overlay={myAccountMenu}>
-            <div>
-
-              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                My account <DownOutlined />
-              </a>
-            </div>
-          </Dropdown>
-        </Menu>
-      </Header>
+    <React.Fragment>
       <Layout>
-        <Sider width={200} className="site-layout-background"
-          style={{
-            height: 'calc(100vh - 64px)',
-            position: 'fixed',
-            top: '64px'
-          }}>
-
-
+        <Sider width={250} className="site-layout-background">
+          <div id="brandLogo">
+            <LogoIcon size={34} fill="#5644F6"/>
+            <span className="text-primary">UpSwipe</span>
+          </div>
           <Menu
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
-            style={{ height: '100%', borderRight: 0 }}
+            style={{borderRight: 0}}
           >
-            <Menu.Item key="1" icon={<NotificationOutlined />}>
+            <Menu.Item key="1" icon={<NotificationOutlined/>}>
               <Link
-                to={"/placements"}
-              > Placements</Link>
+                to={"/dashboard"}
+              >
+                Dashboard
+                {Arrow}
+              </Link>
             </Menu.Item>
             <Menu.ItemGroup key="g1" title="Your Lists">
-              <Menu.Item key="2" icon={<UserOutlined />}>
+              <Menu.Item key="1" icon={<NotificationOutlined/>}>
+                <Link
+                  to={"/placements"}
+                >
+                  Placements
+                  {Arrow}
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="2" icon={<UserOutlined/>}>
                 <Link
                   to={"/influencerList"}
-                >Influencers</Link>
+                >
+                  Influencers
+                  {Arrow}
+                </Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<ShopOutlined />}>
+              <Menu.Item key="3" icon={<ShopOutlined/>}>
                 <Link
                   to={"/shopList"}
-                >Shops</Link>
+                >
+                  Shops
+                  {Arrow}
+                </Link>
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g1" title="Discover">
-              <Menu.Item key="2" icon={<UserOutlined />}>
+              <Menu.Item key="2" icon={<UserOutlined/>}>
                 <Link
                   to={"/influencers"}
-                >Influencers</Link>
+                >
+                  Influencers
+                  {Arrow}
+                </Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<ShopOutlined />}>
+              <Menu.Item key="3" icon={<ShopOutlined/>}>
                 <Link
                   to={"/shops"}
-                >Shops</Link>
+                >
+                  Shops
+                  {Arrow}
+                </Link>
               </Menu.Item>
             </Menu.ItemGroup>
 
           </Menu>
         </Sider>
-        <Layout style={{ padding: '0 24px 24px' }}>
 
+        <Layout>
+          <Header className="header">
+            <Menu mode="horizontal" style={{float: 'right'}} id="MyAccountMenu">
+              <Dropdown overlay={myAccountMenu} trigger={['click']}>
+                <div className="flex-center-center">
+                  <Button type="danger">
+                    <Space size="middle">
+                      Add to list
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.33333 3.33333H4.66667V0.666667C4.66667 0.489856 4.59643 0.320286 4.4714 0.195262C4.34638 0.0702379 4.17681 0 4 0C3.82319 0 3.65362 0.0702379 3.5286 0.195262C3.40357 0.320286 3.33333 0.489856 3.33333 0.666667V3.33333H0.666667C0.489856 3.33333 0.320286 3.40357 0.195262 3.5286C0.0702379 3.65362 0 3.82319 0 4C0 4.17681 0.0702379 4.34638 0.195262 4.4714C0.320286 4.59643 0.489856 4.66667 0.666667 4.66667H3.33333V7.33333C3.33333 7.51014 3.40357 7.67971 3.5286 7.80474C3.65362 7.92976 3.82319 8 4 8C4.17681 8 4.34638 7.92976 4.4714 7.80474C4.59643 7.67971 4.66667 7.51014 4.66667 7.33333V4.66667H7.33333C7.51014 4.66667 7.67971 4.59643 7.80474 4.4714C7.92976 4.34638 8 4.17681 8 4C8 3.82319 7.92976 3.65362 7.80474 3.5286C7.67971 3.40357 7.51014 3.33333 7.33333 3.33333Z"
+                          fill="white"/>
+                      </svg>
+                    </Space>
+                  </Button>
+                  <img src={Notification} className="py-3"/>
+                  <Text className="my-1">Cody Fisher</Text>
+                  <Avatar size={53} style={{border: 'none'}}
+                          src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4-1Tw2E8d-uY-vctRbO2tc5JigsPBvGR7eA&usqp=CAU'/>
+                  <a className="ant-dropdown-link my-1" onClick={e => e.preventDefault()}>
+                    <DownOutlined/>
+                  </a>
+                </div>
+              </Dropdown>
+            </Menu>
+          </Header>
           <Content
             className="site-layout-background"
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              width: 'calc(100vw - 200px)',
-              position: 'absolute',
-              right: 0,
-              top: 64,
-              minHeight: 'calc(100vh - 64px)'
-            }}
+
           >
             {children}
           </Content>
         </Layout>
-      </Layout >
-    </Layout >
+      </Layout>
+      <footer className={"flex-end-center"} style={{paddingRight: "2rem"}}>
+        <a>Legal Notice</a>
+        <div>All rights reserved 2020</div>
+        <div style={{color: "white"}}>
+          <LogoIcon size={8} fill="white"/>
+          <span>UpSwipe</span>
+        </div>
+      </footer>
+    </React.Fragment>
   );
 }
 

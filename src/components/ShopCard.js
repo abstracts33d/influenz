@@ -2,10 +2,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Avatar, Card, Typography, Button, Image, Row, Col } from 'antd';
-import { LinkOutlined, CloseCircleOutlined } from '@ant-design/icons';
+import { Avatar, Card, Typography, Button, Row, Col } from 'antd';
 
-const { Title, Text, Paragraph } = Typography;
+const { Text, Paragraph } = Typography;
 
 const ShopCard = (props) => {
   return (
@@ -31,7 +30,7 @@ const ShopCard = (props) => {
         <Col span="13">
           <Row className="flex-between-center" style={{ marginBottom: '1rem' }}>
             <div>
-              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" style={{ marginRight: '0.5rem' }} />
+              <Avatar src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4-1Tw2E8d-uY-vctRbO2tc5JigsPBvGR7eA&usqp=CAU' style={{ marginRight: '0.5rem' }} />
               <Text>soniatlev.fr</Text>
             </div>
 

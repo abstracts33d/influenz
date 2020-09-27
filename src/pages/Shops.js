@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 
-import { Card, Typography, Row, Space, Button, Table, Input } from 'antd';
+import { Card, Typography, Row, Space, Button, Input } from 'antd';
 import { UnorderedListOutlined, BorderOutlined } from '@ant-design/icons';
 
 import ShopCard from '../components/ShopCard'
 import ShopTable from '../components/ShopTable'
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const { Search } = Input;
-const { Column } = Table;
 
 const shopTableData = [
   {
@@ -58,7 +56,7 @@ function Shops() {
       ) || (
           < React.Fragment >
             < Card style={{ margin: "1rem 0" }}>
-              <div style={{ overflowX: "scroll" }}>
+              <div>
                 <ShopTable shopTableData={shopTableData} inDiscover />
               </div>
             </Card >
