@@ -50,7 +50,7 @@ div.ant-typography, .ant-typography p {
       transform: translate(1px, 3px) !important;
   }
   &.transformed {
-    transform: translate(9px, 6px) !important;
+    transform: translate(9px, 0) !important;
   }
 }
 
@@ -64,9 +64,22 @@ div.ant-typography, .ant-typography p {
 .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
   border-right: unset;
 }
-
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title{
+  width: 94%!important;
+}
 .ant-menu-item{
   border-radius: 0 3rem 3rem 0;
+  a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .menu-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 .ant-menu-item-selected{
   .menu-arrow{
