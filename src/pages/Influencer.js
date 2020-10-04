@@ -21,7 +21,7 @@ function Influencer() {
             <Row>
                 <Col span={22} push={1}>
                     <Row>
-                        <Col span={19}>
+                        <Col span={17}>
                             <Row>
                                 <Title level={3}>Statistics</Title>
                             </Row>
@@ -58,7 +58,7 @@ function Influencer() {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col span={4} push={1}>
+                        <Col span={6} push={1}>
                           <Row className='flex-between-center'>
                             <Title level={3}>
                               Most-placed <br/>shops
@@ -67,12 +67,12 @@ function Influencer() {
                           </Row>
                             <Row>
                                 <Col span={24}>
-                                    <SideCard type='influencer'/>
-                                    <SideCard type='influencer'/>
-                                    <SideCard type='influencer'/>
-                                    <SideCard type='influencer'/>
-                                    <SideCard type='influencer'/>
-                                    <SideCard type='influencer'/>
+                                    <SideCard type='influencer' link='shop'/>
+                                    <SideCard type='influencer' link='shop'/>
+                                    <SideCard type='influencer' link='shop'/>
+                                    <SideCard type='influencer' link='shop'/>
+                                    <SideCard type='influencer' link='shop'/>
+                                    <SideCard type='influencer' link='shop'/>
                                 </Col>
                             </Row>
                         </Col>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import {Card, Row, Col, Avatar, Typography, Space} from 'antd';
 
@@ -6,14 +7,15 @@ const {Text} = Typography;
 
 const SideCard = (props) => {
   return (
+  <Link to={props.link}>
     <Card style={{margin: "1rem 0"}} className='side-card'>
       <Row>
-        <Col span="7">
+        <Col span="8">
           <Avatar size={48} style={{border: 'none'}}
                   src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4-1Tw2E8d-uY-vctRbO2tc5JigsPBvGR7eA&usqp=CAU'/>
         </Col>
         {props.type === 'influencer' && (
-          <Col span="17">
+          <Col span="16">
             <Row>
               <Col span="15">
                 <Text>Darlene Robertson</Text>
@@ -37,7 +39,7 @@ const SideCard = (props) => {
             </Row>
           </Col>
         ) || (
-          <Col span="17">
+          <Col span="16">
             <Row>
               <Col span="24">
                 <Text>Darlene Robertson</Text>
@@ -87,6 +89,7 @@ const SideCard = (props) => {
         )}
       </Row>
     </Card>
+  </Link>
   )
 }
 

@@ -16,14 +16,14 @@ function Placement() {
     <div id="Placement">
     <Row style={{marginBottom: '1.5rem'}}>
         <Col span={22} push={1}>
-          <ShowHead/>
+          <ShowHead type='placement'/>
         </Col>
       </Row>
 
       <Row>
         <Col span={22} push={1}>
           <Row>
-            <Col span={19}>
+            <Col span={17}>
               <Row>
                 <Title level={3}>Placement for <Link>www.statholdings.com</Link></Title>
               </Row>
@@ -91,7 +91,7 @@ function Placement() {
                 </Col>
               </Row>
             </Col>
-            <Col span={4} push={1}>
+            <Col span={6} push={1}>
               <Row className='flex-between-center'>
                 <Title level={3}>
                   Similar <br/>influencers
@@ -100,13 +100,13 @@ function Placement() {
               </Row>
               <Row>
                 <Col span={24}>
-                  <SideCard/>
-                  <SideCard/>
-                  <SideCard/>
-                  <SideCard/>
-                  <SideCard/>
-                  <SideCard/>
-                  <SideCard/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
+                  <SideCard link='influencer'/>
                 </Col>
               </Row>
             </Col>

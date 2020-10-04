@@ -6,6 +6,7 @@
 main {
   height: calc(calc(100vh - 25px) - 64px);
 }
+
 .App {
   height: 100vh;
   min-height: 100vh;
@@ -15,6 +16,7 @@ main {
   height: calc(100vh - 25px);
   min-height: calc(100vh - 25px);
 }
+
 .ant-layout-sider, .ant-layout-header{
   background: white;
 }
@@ -27,11 +29,17 @@ main {
   background-color: #F6F7F9;
   background: #F6F7F9;
 }
-
+.ant-card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
 .hover-card{
   & > :hover {
     background: rgba(86,68,246,0.1);
   }
+}
+
+.ant-checkbox-inner {
+  border-radius: 5px;
 }
 div.ant-typography, .ant-typography p {
   margin-bottom: 0.5rem;
@@ -204,8 +212,8 @@ div.ant-typography, .ant-typography p {
   .detail-card{
 
     * {color: white!important;}
-    width: 220px;
-    height: 385px;
+    width: 170px;
+    height: 300px;
     position: relative;
     margin: auto;
     background-position: center center;
@@ -218,7 +226,7 @@ div.ant-typography, .ant-typography p {
 }
 
 #InfluencerDetailPopup{
-  z-index: 10;
+  z-index: 20;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -315,7 +323,7 @@ footer {
 
 
 .statistic-card {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   .circle {
     font-size: 1.7rem;
     width: 4rem;
@@ -443,4 +451,29 @@ footer {
 .my-1{
   padding-right: .5rem;
   padding-left: .5rem;
+}
+
+
+#Card-row{
+  position: relative;
+  .overlay{
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 170px;
+    background: linear-gradient(.25turn, rgba(255,255,255, 0), 40%, rgba(255,255,255,.5));
+  }
+  .arrow{
+    z-index: 11;
+    position: absolute;
+    right: 90px;
+    top: 50%;
+    transform:  translate(0, -50%);
+    a {
+      border-radius: 1.5rem!important;
+      border: 1px solid @primary-color;
+    }
+  }
 }

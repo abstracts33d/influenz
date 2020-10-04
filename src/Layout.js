@@ -16,21 +16,15 @@ const {Header, Content, Sider} = Layout;
 const myAccountMenu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-        1st menu item
-      </a>
+      <Link target="_blank" rel="noopener noreferrer" to="http://www.alipay.com/">
+        Mon compte
+      </Link>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-        2nd menu item
-      </a>
+      <Link target="_blank" rel="noopener noreferrer" to="http://www.taobao.com/">
+        Se deconnecter
+      </Link>
     </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-        3rd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item danger>a danger item</Menu.Item>
   </Menu>
 );
 

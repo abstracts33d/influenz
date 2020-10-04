@@ -22,7 +22,7 @@ function Shop() {
             <Row>
                 <Col span={22} push={1}>
                     <Row>
-                        <Col span={19}>
+                        <Col span={17}>
                             <Row>
                                 <Title level={3}>Statistics</Title>
                             </Row>
@@ -59,7 +59,7 @@ function Shop() {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col span={4} push={1}>
+                        <Col span={6} push={1}>
                             <Row className='flex-between-center'>
                                 <Title level={3}>
                                   Most-placed <br/>influencers
@@ -68,13 +68,13 @@ function Shop() {
                             </Row>
                             <Row>
                                 <Col span={24}>
-                                    <SideCard/>
-                                    <SideCard/>
-                                    <SideCard/>
-                                    <SideCard/>
-                                    <SideCard/>
-                                    <SideCard/>
-                                    <SideCard/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
+                                    <SideCard link='influencer'/>
                                 </Col>
                             </Row>
                         </Col>
